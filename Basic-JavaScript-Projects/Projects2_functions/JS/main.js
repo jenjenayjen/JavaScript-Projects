@@ -10,3 +10,16 @@ function concat() {
     sentence += " a lot from this course!";
     document.getElementById("concatenate").innerHTML = sentence;
 }
+
+//step 77 does not work mathematically,only concetenates what user inputed
+function add() {
+    var x = prompt("Please enter a number to add");
+    var y = prompt("Please enter another number to add");
+    var result = x + y;
+    document.getElementById("add").innerHTML = result;
+}
+
+function additionFunction() {
+    var addition = 2 + 2;
+    document.getElementById("add").innerHTML = "2 + 2 = " + addition;
+}
