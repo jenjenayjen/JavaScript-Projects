@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="JS/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/main.css">
+</head>
+
+<body>
+    <!--step 170-->
+    <p>How many seconds would you lik to set your alarm for?</p>
+    <input id="sec" value="" />
+    <button onclick="countdown()">Start</button>
+    <p id="timer"></p>
+    <!--slideshow container-->
+    <div class="slideshow-container">
+        <!--full width images with number and caption text-->
+        <div class="mySlideFade">
+            <div class="numText"></div>
+            <img scr="" alt="">
+            <div class="text"></div>
+        </div>
+        <!--next and prev buttons-->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    <br>
+    <!--dots/circles-->
+    <div style="text-align: center;">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+    </div>
+</body>
+
+</html>
