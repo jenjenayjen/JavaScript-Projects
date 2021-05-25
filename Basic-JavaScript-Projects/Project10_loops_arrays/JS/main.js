@@ -93,4 +93,24 @@ let car = {
         return "The car is a " + this.year + this.color + this.make + this.model;
     }
 };
-document.getElementById("car").innerHTML = car.description;
+document.getElementById("car").innerHTML = car.description();
+
+//step 224 break
+function breakOut() {
+    content = "";
+    for (x = 0; x < arr.length; x++) {
+        if (x == 2) { break; }
+        content += arr[x] + "<br>";
+    }
+    document.getElementById("breakOut").innerHTML = content;
+}
+
+//step 224 continue
+function contOn() {
+    content = "";
+    for (x = 0; x < arr.length; x++) {
+        if (x == 2) { continue; }
+        content += arr[x] + "<br>";
+    }
+    document.getElementById("continueOn").innerHTML = content;
+}
