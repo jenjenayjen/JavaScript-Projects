@@ -58,3 +58,39 @@ function constantFunction() {
     document.getElementById("constant").innerHTML = "Suga is " + Suga.ethnicity + ".";
 
 }
+
+//step 217
+var p = 23;
+document.write(p);
+
+function letFunction() {
+    let p = 30;
+    document.getElementById("p").innerHTML = p;
+}
+document.write(p);
+
+function varFunction() {
+    var p = 80;
+    document.getElementById("v").innerHTML = p;
+}
+document.write(p);
+
+//step 220 return statement
+function returnGreeting(name) {
+    return "hello there " + name;
+}
+document.getElementById("return").innerHTML =
+    returnGreeting("jenny");
+
+//step 222
+
+let car = {
+    make: "Dodge",
+    model: "Viper",
+    year: "2021",
+    color: "red",
+    description: function() {
+        return "The car is a " + this.year + this.color + this.make + this.model;
+    }
+};
+document.getElementById("car").innerHTML = car.description;
