@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>BTS Butter Deli</title>
+    <META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=utf-8">
+    <meta content="width=device-width,initial-scale=1.0" name="viewport">
+    <script src="Pizza_JavaScript/pizza.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="PIzza_CSS/pizza.css" />
+</head>
+
+<body>
+    <div id="menuBG">
+        <h1 style="margin:0 0px 0 20px;">Butter Time</h1>
+        <input id="btnOrder" type="button" onclick="getReceipt()" value="Place Order">
+        <form id="frmMenu">
+            <div class="menu left">
+                <h3>Type of Bread:</h3>
+                <input class="bread" type="radio" name="Bread" value="White Bread">White Bread<br>
+                <input class="bread" type="radio" name="Bread" value="French Bread">French Bread<br>
+                <input class="bread" type="radio" name="Bread" value="Wheat Bread">Wheat Bread<br>
+                <input class="bread" type="radio" name="Bread" value="Rye Bread">Rye Bread<br>
+
+            </div>
+            <div class="menu right">
+                <h3>Type of Butter:</h3>
+                <input class="butter" type="radio" name="Butter" value="Unsalted">Unsalted Butter<br>
+                <input class="butter" type="radio" name="Butter" value="Salted">Salted Butter<br>
+                <input class="butter" type="radio" name="Butter" value="Organic">Organic Butter<br>
+                <input class="butter" type="radio" name="Butter" value="European">European Butter<br>
+                <input class="butter" type="radio" name="Butter" value="Goat">Goat Butter<br>
+                <input class="butter" type="radio" name="Butter" value="Peanut">Peanut<br>
+                <input class="butter" type="radio" name="Butter" value="Almond">Almond Butter<br>
+                <input class="butter" type="radio" name="Butter" value="Light">Light Butter<br>
+                <input class="butter" type="radio" name="Butter" value="Clarifed">Clarified Butter<br>
+            </div>
+            <div class="menu left">
+                <h3>Level of Toastiness:</h3>
+                <input class="toast" type="radio" name="Toast" value="Barely">Barely Heated<br>
+                <input class="toast" type="radio" name="Toast" value="Light">Lightly Toasted<br>
+                <input class="toast" type="radio" name="Toast" value="Perfect">Perfectly Toasted<br>
+                <input class="toast" type="radio" name="Toast" value="Charred">Charred<br>
+            </div>
+            <div class="menu right">
+                <h3>Toppings:</h3>
+                <input class="toppings" type="checkbox" name="Topping" value="Strawberry Jam">Strawberry Jam<br>
+                <input class="toppings" type="checkbox" name="Topping" value="Strawberry Fruit">Sliced Strawberries<br>
+                <input class="toppings" type="checkbox" name="Topping" value="Avocado">Sliced Avocadoes<br>
+                <input class="toppings" type="checkbox" name="Topping" value="Cheese">Cheese<br>
+                <input class="toppings" type="checkbox" name="Topping" value="Egg">Fried Egg<br>
+            </div>
+            <div id="cart">
+                <div id="showText"></div>
+                <div id="totalPrice"></div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>
