@@ -1,0 +1,68 @@
+input {}
+
+input[type=text] {
+    padding 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    width: 100%;
+    color: blueviolet;
+    transition: width 0.5s ease-in-out;
+    background-color: lavender;
+}
+
+input[type=text]:focus {
+    border: 2px solid black;
+    outline: active;
+    border-radius: 5px;
+    width: 100%;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: purple;
+    color: white;
+}
+
+input[type=submit]:hover {
+    background-color: blueviolet;
+}
+
+.container {
+    border-radius: 5px;
+    background-color: lavender;
+    padding: 20px;
+}
+
+.col25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width:600px) {
+    .col25,
+    .col75,
+    input[type=submit],
+    input[type=type] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
