@@ -58,6 +58,8 @@ function placeXorO(squareNumber) {
         //this condition allows our while loop to keep trying if a square is selected already
         while (!success) {
             //a random number btw 0-8 is chosen
+            pickASquare = String(Math.floor(Math.random() * 9));
+            //if the random number evaluated returns true, the square hasnt been selected yet
             if (placeXorO(pickASquare)) {
                 //this line calls the function
                 placeXorO(pickASquare);
@@ -176,6 +178,8 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
         c.lineTo(x, y);
         //this method sets the width of our line
         c.lineWidth = 10;
+        //to make the lin to be a different color other than black
+        c.strokeStyle = "rgba(70,70,255,0.8)";
         //this method draws everything we laid out above
         c.stroke();
         //this condition checks if we've reached the endpoint
@@ -187,6 +191,13 @@ function drawWinLine(coordX1, coordY1, coordX2, coordY2) {
             //this condition cancels our animation loop
             //if we've reach the end point
             if (x >= x2 && y >= y2) { cancelAnimationFrame(animationLoop); }
+        }
+        //this condition is similar to the one above
+        //this is necessary for the 6,4,2 win condition
+        if (x1 <= x2 && y1 >= y2) {
+            if (x < x2) { x += 10; }
+            if (y > y2) { y -= 10; }
+            if (x >= x2 && y <= y2) { cancelAnimationFrame(animationLoop); }
         }
     }
     //this function clears our canvas after our win line is draw
