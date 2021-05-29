@@ -11,7 +11,7 @@ html {
     box-sizing: inherit;
 }
 
-.calculator {
+.Calculator {
     border: 1.2px solid blueviolet;
     border-radius: 7px;
     position: absolute;
@@ -21,7 +21,7 @@ html {
     width: 500px;
 }
 
-.calculator-screen {
+.Calculator-screen {
     width: 100%;
     font-size: 5rem;
     height: 80px;
@@ -77,7 +77,7 @@ button:hover {
     background-color: rgb(75, 0, 75);
 }
 
-.calculator-keys {
+.Calculator-keys {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-gap: 20px;

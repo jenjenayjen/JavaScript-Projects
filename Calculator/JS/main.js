@@ -1,98 +1,98 @@
 //creates an object to keep track of value
-const calculator = {
+const Calculator = {
     //display 0 on the screen
-    displayValue: '0',
+    Display_Value: '0',
     //hold the first operand for any experssions, set to null for now
-    firstOp: null,
+    First_Operand: null,
     //this checks whether or not the second operand has been input
-    waitSecOp: false,
+    Wait_Second_Operand: false,
     //this hold the operator, set to null for now
     operator: null,
 };
 
 //this modifies values each time a button is clicked
-function inputDigit(digit) {
-    const { displayValue, waitSecOp } = calculator;
-    //we are checking to see if waitSecOp is true and set
-    //displayValue to the key that was clicked
-    if (waitSecOp === true) {
-        calculator.displayValue = digit;
-        calculator.waitSecOp = false;
+function Input_Digit(digit) {
+    const { Display_Value, Wait_Second_Operand } = Calculator;
+    //we are checking to see if Wait_Second_Operand is true and set
+    //Display_Value to the key that was clicked
+    if (Wait_Second_Operand === true) {
+        Calculator.Display_Value = digit;
+        Calculator.Wait_Second_Operand = false;
     } else {
-        //this overwrites displayValue if the current value is 0
+        //this overwrites Display_Value if the current value is 0
         //otherwise it adds to it
-        calculator.displayValue = displayValue === '0' ? digit : displayValue + digit;
+        Calculator.Display_Value = Display_Value === '0' ? digit : Display_Value + digit;
     }
 }
 //this section handles decimal points
-function inputDecimal(dot) {
+function Input_Decimal(dot) {
     //this ensures that accidental clicking of the decimal point
     //doesnt cause bugs in your operation
-    if (calculator.waitSecOp === true) return;
-    if (!calculator.displayValue.includes(dot)) {
-        //we are saying that if the displayValue does not contain a decimal point
+    if (Calculator.Wait_Second_Operand === true) return;
+    if (!Calculator.Display_Value.includes(dot)) {
+        //we are saying that if the Display_Value does not contain a decimal point
         //we want to add a decimal point
-        calculator.displayValue += dot;
+        Calculator.Display_Value += dot;
     }
 }
 
 //this section handles operators
-function handleOp(nextOp) {
-    const { firstOp, displayValue, operator } = calculator;
+function Handle_Operator(Next_Operator) {
+    const { First_Operand, Display_Value, operator } = Calculator;
     //when an operator key is pressed, we convert the current number
     //displayed on the screen to a number and then store the result in
-    //calculator.firstOp if it doesn't already exist
-    const valueOfInput = parseFloat(displayValue);
-    //checks if an operator already exist and if waitSecOp is true,
+    //Calculator.First_Operand if it doesn't already exist
+    const Value_of_Input = parseFloat(Display_Value);
+    //checks if an operator already exist and if Wait_Second_Operand is true,
     //then updates the operator and exist from the function
-    if (operator && calculator.waitSecOp) {
-        calculator.operator = nextOp;
+    if (operator && Calculator.Wait_Second_Operand) {
+        Calculator.operator = Next_Operator;
         return;
     }
-    if (firstOp == null) {
-        calculator.firstOp = valueOfInput;
+    if (First_Operand == null) {
+        Calculator.First_Operand = Value_of_Input;
     } else if (operator) {
         //checks if an operator already exists
-        const valueNow = firstOp || 0;
+        const Value_Now = First_Operand || 0;
         //if operator exists, property lookup is performed for the operator
-        //in the performCalculation object and the function taht matches the 
+        //in the Perform_Calculation object and the function taht matches the 
         //operator is executed
-        let result = performCalculation[operator](valueNow, valueOfInput);
+        let result = Perform_Calculation[operator](Value_Now, Value_of_Input);
         //here we add a fixed amount of numbers after the decimal
         result = Number(result).toFixed(9);
         //this will remove any trailings 0's
         result = (result * 1).toString();
-        calculator.displayValue = parseFloat(result);
-        calculator.firstOp = parseFloat(result);
+        Calculator.Display_Value = parseFloat(result);
+        Calculator.First_Operand = parseFloat(result);
     }
-    calculator.waitSecOp = true;
-    calculator.firstOp = nextOp;
+    Calculator.Wait_Second_Operand = true;
+    Calculator.operator = Next_Operator;
 }
 
-const performCalculation = {
-    '/': (firstOp, secOp) => firstOp / secOp,
-    '*': (firstOp, secOp) => firstOp * secOp,
-    '+': (firstOp, secOp) => firstOp + secOp,
-    '-': (firstOp, secOp) => firstOp - secOp,
-    '=': (firstOp, secOp) => secOp
+const Perform_Calculation = {
+    '/': (First_Operand, Second_Operand) => First_Operand / Second_Operand,
+    '*': (First_Operand, Second_Operand) => First_Operand * Second_Operand,
+    '+': (First_Operand, Second_Operand) => First_Operand + Second_Operand,
+    '-': (First_Operand, Second_Operand) => First_Operand - Second_Operand,
+    '=': (First_Operand, Second_Operand) => Second_Operand
 };
 
-function calculatorReset() {
-    calculator.displayValue = '0';
-    calculator.firstOp = null;
-    calculator.waitSecOp = false;
-    calculator.operator = null;
+function Calculator_Reset() {
+    Calculator.Display_Value = '0';
+    Calculator.First_Operand = null;
+    Calculator.Wait_Second_Operand = false;
+    Calculator.operator = null;
 }
 
-//this function updates the screen with the contents of displayValue
-function updateDisplay() {
-    const display = document.querySelector('.calculator-screen');
-    display.value = calculator.displayValue;
+//this function updates the screen with the contents of Display_Value
+function Update_Display() {
+    const display = document.querySelector('.Calculator-screen');
+    display.value = Calculator.Display_Value;
 }
 
-updateDisplay();
+Update_Display();
 //this section monitors button clicks
-const keys = document.querySelector('.calculator-keys');
+const keys = document.querySelector('.Calculator-keys');
 keys.addEventListener('click', (event) => {
     //the target variable is an object that represents the element
     //that was clicked
@@ -102,21 +102,21 @@ keys.addEventListener('click', (event) => {
         return;
     }
     if (target.classList.contains('operator')) {
-        handleOp(target.value);
-        updateDisplay();
+        Handle_Operator(target.value);
+        Update_Display();
         return;
     }
     if (target.classList.contains('decimal')) {
-        inputDecimal(target.value);
-        updateDisplay();
+        Input_Decimal(target.value);
+        Update_Display();
         return;
     }
-    //ensures that AC clears the numbers from the calculator
+    //ensures that AC clears the numbers from the Calculator
     if (target.classList.contains('all-clear')) {
-        calculatorReset();
-        updateDisplay();
+        Calculator_Reset();
+        Update_Display();
         return;
     }
-    inputDigit(target.value);
-    updateDisplay();
+    Input_Digit(target.value);
+    Update_Display();
 })
