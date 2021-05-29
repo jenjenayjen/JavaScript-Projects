@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+
+<body>
+    <div id="JSX"></div>
+    <!--//step 382 returns lots of errors in chrome console. not showing as expected the code looks the same to me, but it may be missing-->
+    <script type="text/babel">
+        class Greeting extends React.Component{ render(){ return
+        <h1>Hello, World!</h1>
+        } } ReactDOM.render(
+        <Greeting />,document.getElementById("JSX"))
+    </script>
+</body>
+
+</html>

@@ -3,12 +3,33 @@
 
 <head>
     <script src="JS/JavaScript_1.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="CSS/CSS_2.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <h1>Which BTS member is your bias?</h1>
-    <h3>Pick one from the list below:</h3>
-    <ul>
+    <script>
+        //adds a fade out class to body as soon as page loads otherwise page will be briefly visible
+        //document.body.classList.add('fade-out');
+        //remove fade-out class from body once page is loaded (error not fading in)
+        //window.addEventListener('DOMcontentLoaded', function() {
+        //    document.body.classList.remove('fade-out');
+        //});
+    </script>
+
+    <!--nav step 398-->
+    <a href="#question">Question</a> |
+    <a href="#text">Text Change</a> |
+    <a href="#395">395</a> |
+    <a href="#canvasID">Canvas</a> |
+    <a href="#img">Image</a> |
+    <a href="#slideshow">Slideshow</a>
+    <!--end of nav-->
+    <hr>
+    <h1 id="question" style="font-size:5vw;">Which BTS member is your bias?</h1>
+    <hr>
+    <h3 style="font-size:4vw;">Pick one from the list below:</h3>
+    <ul style="font-size:3vw;">
         <li>RM</li>
         <li>Jin</li>
         <li>Suga</li>
@@ -17,15 +38,56 @@
         <li>V</li>
         <li>Jungkook</li>
     </ul>
-    <h3>Enter your bias below:</h3>
+    <h3 style="font-size: 4vw;">Enter your bias below:</h3>
     <input id="bias" type="text">
     <button onclick="biasFunction()">Submit</button>
     <p id="output"></p>
-
-    <p class="text">This text will change.</p>
+    <hr>
+    <p id="text" class="text">This text will change.</p>
     <p class="text">I refuse to change.</p>
     <button onclick="textChange()">Click to change text</button>
+    <hr>
     <canvas id="canvasID" width="500" height="250" style="border:5px solid black;"></canvas>
+
+    <!--step 395 popup form-->
+    <button class="open-button" onclick="openForm()">Login Here</button>
+    <div class="form-popup" id="myForm">
+        <form action="" class="form-container">
+            <h1>Login</h1>
+            <label for="email"><b>Email</b></label>
+            <input type="text" placeholder="Enter Email" name="email" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="text" placeholder="Enter Password" name="password" required>
+
+            <button type="submit" class="btn">Login</button>
+            <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+
+    <!--step 399 auto slideshow-->
+    <div id="slideshow">
+        <div>
+            <img src="Images/thumbnail_4.jpg" alt="">
+        </div>
+        <div>
+            <img src="Images/thumbnail_6.jpg" alt="">
+        </div>
+        <div>
+            <img src="Images/thumbnail_7.jpg" alt="">
+        </div>
+        <div>
+            <img src="Images/thumbnail_8.jpg" alt="">
+        </div>
+        <div>
+            <img src='Images/thumbnail_9.jpg' alt="">
+        </div>
+    </div>
+
+    <!--step 396 keyframes on the photo to make it zoom in and out-->
+    <img id="img" src="Images/thumbnail_1.jpg" alt="">
+
+    <p id="red" ondblclick="turnRed()">click to turn red</button>
 </body>
 
 </html>

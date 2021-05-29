@@ -37,7 +37,7 @@ function textChange() {
     A[0].innerHTML = "I changed!";
 }
 
-//step 241
+//step 241 creates a purple gradient
 var c = document.getElementById("canvasID");
 var ctx = c.getContext("2d");
 var grd = ctx.createLinearGradient(0, 0, 400, 0);
@@ -45,3 +45,29 @@ grd.addColorStop(0, "purple");
 grd.addColorStop(1, "white");
 ctx.fillStyle = grd;
 ctx.fillRect(0, 0, 500, 250);
+
+//step 395 popup form
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+//step 399 auto slideshow
+$("#slideshow>div:gt(0)").hide();
+
+setInterval(function() {
+    $('#slideshow > div:first')
+        .fadeOut(1000)
+        .next()
+        .fadeIn(1000)
+        .end()
+        .appendTo('#slideshow');
+}, 3000);
+
+//step 424turning text red on double click
+function turnRed() {
+    document.getElementById("red").style.color = "red";
+}

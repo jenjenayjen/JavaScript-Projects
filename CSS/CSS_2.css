@@ -1,0 +1,180 @@
+body {
+    opacity: 1;
+    transition: 1s opacity;
+}
+
+body.fade-out {
+    opacity: 0;
+    transition: none;
+}
+
+
+/*step 395*/
+
+{
+    box-sizing: border-box;
+}
+
+
+/*button used to open the contact stick to top of page*/
+
+.open-button {
+    top: 0;
+    display: block;
+    right: 0;
+    background-color: #555;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    width: 100px;
+    z-index: 100;
+}
+
+
+/*pop up form -hidden by default*/
+
+.form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+
+
+/*add styles to form container*/
+
+.form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+
+
+/*full-width input fields*/
+
+.form-container input[type=text],
+.form-container input[type=password] {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+
+
+/*when the input get focus, do sth*/
+
+.form-container input[type=text]:focus,
+.form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+
+/*set a style for the submit/login button*/
+
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+
+/*add a red bg color to cancel btn*/
+
+.form-container .cancel {
+    background-color: red;
+}
+
+
+/*add some hover effects to btn*/
+
+.form-container .btn:hover,
+.open-button:hover {
+    opacity: 1;
+}
+
+
+/*step 396 keyframes. moves canvas down repeatedly*/
+
+canvas {
+    position: relative;
+    animation: mymove 5s infinite;
+}
+
+@keyframes mymove {
+    from {
+        top: 0px;
+    }
+    to {
+        top: 200px;
+    }
+}
+
+
+/*step 397 zoom in and out*/
+
+@keyframes zoom {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(1.2, 1.2);
+    }
+    100% {
+        transform: scale(1, 1);
+    }
+}
+
+#img {
+    width: 500px;
+}
+
+img:hover {
+    animation: zoom 5s infinite;
+}
+
+
+/*step 398 smooth scroll*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+/*step 399 auto slideshow*/
+
+#slideshow {
+    margin-top: 200px;
+    margin-bottom: 20px;
+    position: relative;
+    width: 500px;
+    height: 250px;
+    padding: 10px;
+    padding-bottom: 40px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+#slideshow>div {
+    position: absolute;
+    width: 500px;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+}
+
+#slideshow>div>img {
+    width: 500px;
+}

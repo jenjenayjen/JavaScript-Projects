@@ -9,14 +9,31 @@
 <body>
     <p id="pic"></p>
     <button onclick="myFunction()">click here</button>
+    <p>Can I have your number?</p>
+    <form name="myForm" onsubmit="return validateForm()">
+        <label for="number">Please enter your number</label>
+        <input type="text" id="number" name="number">
+
+        <input type="submit" value="Submit">
+    </form>
+
     <img src="Images/thumbnail_0.jpg" alt="">
     <img src="Images/thumbnail_1.jpg" alt="">
 
 
     <script>
+        //returns how many photos there are in the HTML DOC step 336
         function myFunction() {
             var x = document.images.length;
             document.getElementById("pic").innerHTML = "There are " + x + " in the HTML DOC.";
+        }
+        //return an alert if someone submits an empty form step 394
+        function validateForm() {
+            var x = document.forms["myForm"]["number"].value;
+            if (x == "") {
+                alert("Please give me your number");
+                return false;
+            }
         }
     </script>
 </body>
