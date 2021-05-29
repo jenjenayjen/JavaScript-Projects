@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+</head>
+
+<body>
+
+
+    <script>
+        //used jquery to select html and to write out html
+        $(document).ready(function() {
+            $("html").append(
+                "<body>\
+                    <div id='container'>\
+                        <div id='inner'>\
+                            <h1>Basic jQuery</h1>\
+                            <p id='1'>Paragraph1</p>\
+                            <p id='2'>Paragraph2</p>\
+                            <p id='3'>Paragraph3</p>\
+                        </div>\
+                    </div>\
+                </body>"
+            );
+            //change paragraphs here to make it red
+            //select css
+            //make only paragraph 2 red
+            $("#2").css({
+                "color": "red"
+            });
+            //target paragraph 3 to hide heading1
+            $("#3").click(function() {
+                $("h1").hide();
+            });
+            //target paragraph 1 to show heading 1
+            $("#1").click(function() {
+                $("h1").fadeIn();
+            });
+        });
+    </script>
+</body>
+
+</html>

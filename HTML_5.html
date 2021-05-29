@@ -1,0 +1,24 @@
+<!--step 336-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+</head>
+
+<body>
+    <p id="pic"></p>
+    <button onclick="myFunction()">click here</button>
+    <img src="Images/thumbnail_0.jpg" alt="">
+    <img src="Images/thumbnail_1.jpg" alt="">
+
+
+    <script>
+        function myFunction() {
+            var x = document.images.length;
+            document.getElementById("pic").innerHTML = "There are " + x + " in the HTML DOC.";
+        }
+    </script>
+</body>
+
+</html>
