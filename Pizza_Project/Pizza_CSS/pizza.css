@@ -1,5 +1,5 @@
 body {
-    background-image: url('../images/image_3.jpg');
+    background-image: url('../images/image_2.jpg');
     background-size: cover;
     align-content: center;
 }
@@ -8,6 +8,10 @@ h1,
 h3 {
     font-family: fantasy;
     color: rgb(78, 0, 78);
+}
+
+h1 {
+    margin: 0 0px 0 20px;
 }
 
 div {
@@ -72,9 +76,33 @@ div {
     }
 }*/
 
+
+/*when screen is 500 and less*/
+
 @media screen and (max-width: 500px) {
     body {
         background-image: none;
         background-color: rgb(240, 224, 4);
+    }
+    .right {
+        float: right;
+    }
+}
+
+
+/*when screen is within 750px and 500px    currently not working*/
+
+@media (max-width:750px) and (min-width:500) {
+    body {
+        background-image: url('../images/image_3.jpg');
+    }
+}
+
+
+/*when screen is within 850 and 750px*/
+
+@media (max-width:850px) and (min-width: 750px) {
+    body {
+        background-image: url('../images/image_1.jpg');
     }
 }
