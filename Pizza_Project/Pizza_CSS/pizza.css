@@ -85,21 +85,22 @@ div {
         background-color: rgb(240, 224, 4);
     }
     .right {
-        float: right;
+        float: left;
     }
 }
 
 
 /*when screen is within 750px and 500px    currently not working*/
 
-@media (max-width:750px) and (min-width:500) {
+@media (max-width:750px) and (min-width:500px) {
     body {
+        background-image: none;
         background-image: url('../images/image_3.jpg');
     }
 }
 
 
-/*when screen is within 850 and 750px*/
+/*when screen is within 850px and 750px*/
 
 @media (max-width:850px) and (min-width: 750px) {
     body {
